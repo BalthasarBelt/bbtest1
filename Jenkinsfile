@@ -1,5 +1,6 @@
 pipeline {
 	agent none
+	stages {
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
 
@@ -13,5 +14,5 @@ pipeline {
 		steps { sh 'mvn --version' }
         /* app = docker.build("balthasarbelt/bbtest1") */
     }
-
+	}
 }
