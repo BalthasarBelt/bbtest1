@@ -10,8 +10,9 @@ node {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-
-        app = docker.build("balthasarbelt/bbtest1")
+		agent { image 'maven:3.8.1-adoptopenjdk-11' }
+		steps { sh 'mvn --version' }
+        /* app = docker.build("balthasarbelt/bbtest1") */
     }
 
     stage('Test image') {
